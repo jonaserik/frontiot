@@ -24,7 +24,7 @@
                 <form>
                     <div class="form-group">
                         <label for="ultraSonico">ultraSonico</label>
-                        <input type="number" name="ultraSonico" id="ultraSonico" value="40" step="1">
+                        <input type="number" name="ultraSonico" id="ultraSonico" value="31" step="1">
                     </div>
                     <div class="form-group">
                         <label for="lampada">lampada</label>
@@ -33,27 +33,60 @@
                 </form>
             </div>
         </div>
+        <div class="row garage-bg">
+            &nbsp;
+        </div>
         <div class="row garage">
             <div class="parede">
-                <img src="img/brickwall2.jpg" alt="Parede">
+                <!--img src="img/brickwall2.jpg" alt="Parede"-->
+                &nbsp;
             </div>
             <div class="espaco">
                 &nbsp;
             </div>
             <div class="carango">
-                <img src="img/carango.png" alt="Carango">
+                <img src="img/carango2.png" alt="Carango">
             </div>
         </div>
         <div class="row">
             <div class="status status-parede">&nbsp;</div>
             <div class="status status-espaco">
                 <!--img src="img/svg/si-glyph-arrow-thin-left.svg"/-->
-                <span>35.5</span>
+                <span id="distanciaDisplay">35.5</span>
+                <br>
                 <span class="medida">cm</span>
                 <!--img src="img/svg/si-glyph-arrow-thin-right.svg"/-->
             </div>
-            <div class="status status-carango">&nbsp;</div>
+            <div class="status status-carango">&nbsp;
+                <input type="hidden" name="light" id="light" value="0">
+            </div>
         </div>
     </div>
+    <script src="js/jquery-3.3.1.min.js"></script>    
+    <script src="js/controle.js"></script>
+    <script>
+        $( window ).ready(function() {
+            var distancia = $('#ultraSonico').val();
+            $('#distanciaDisplay').text(distancia);
+        });
+        $("#ultraSonico").change(function() {
+            var lightValue = $('#light').val();
+            var distancia = $('#ultraSonico').val();
+
+            $('#distanciaDisplay').text(distancia);
+            $('.espaco').css('width', distancia + 'px');
+            $('.status-espaco').css('width', distancia + 'px');
+
+            if (distancia <= 30 && lightValue == 0) {
+                $('.garage').css('background-image', 'url("img/fundo-on.png")');
+                lightValue = 1;
+            } else if (distancia > 30 && lightValue == 1) {
+                $('.garage').css('background-image', 'url("img/fundo-off.png")');
+                lightValue = 0;
+            }
+            $('#light').val(lightValue);
+        });
+    </script>
+
 </body>
 </html>

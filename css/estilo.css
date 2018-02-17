@@ -7,22 +7,29 @@
     overflow: hidden;
     float: right;
     display: inline;
+    z-index: 3;
 }
 .carango{
     vertical-align: bottom;
-    padding-top: 268px;
+    padding-top: 100px;
+    z-index: 4;
 }
 .espaco{
     text-align: center;
     width: 30px;
-    border-left: 1px solid #666;
-    border-right: 1px solid #666;
-    height: 130px;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    height: 135px;
     position: relative;
-    top: 270px;
+    top: 100px;
 }
 .parede, .status-parede{
     width: 100px
+}
+.parede{
+    background-image: url("../img/brickwall2.jpg");
+    background-position: initial;
+    background-size: 190px;
 }
 .status{
     
@@ -50,5 +57,23 @@
 .status-carango{
 }
 .garage{
-    background-image: "img/fundo-off.png";
+    background-image: url("../img/fundo-off.png");
+    background-position: initial;
+    background-size: 625px;
+    background-repeat: no-repeat;
+    height: 231px;
+    overflow: hidden;
+    z-index: 2;
+}
+.garage-bg{
+    background-image: url("../img/fundo-off.png");
+    background-position: initial;
+    background-size: 625px;
+    background-repeat: no-repeat;
+    height: 231px;
+    overflow: hidden;
+    position: absolute;
+    width: 625px;
+    top: 42px;
+    z-index: -1;
 }
