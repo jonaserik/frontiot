@@ -1,0 +1,54 @@
+.jumbotron{
+    position: absolute;
+    right: 0;
+}
+.carango, .espaco, .parede{
+    height: 400px;
+    overflow: hidden;
+    float: right;
+    display: inline;
+}
+.carango{
+    vertical-align: bottom;
+    padding-top: 268px;
+}
+.espaco{
+    text-align: center;
+    width: 30px;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+    height: 130px;
+    position: relative;
+    top: 270px;
+}
+.parede, .status-parede{
+    width: 100px
+}
+.status{
+    
+}
+.status-espaco{
+    text-align: center;
+    width: 30px;
+    border: 1px solid #666;
+    border-top: none;
+    height: 15px;
+}
+.status-espaco img, .status-espaco span{
+    position: relative;
+    top:15px;
+}
+.status-espaco img{
+    width: 15px;
+}
+.status-espaco span{
+    font-size: 14px;
+}
+.status-espaco span.medida{
+    top: 5px;
+}
+.status-carango{
+}
+.garage{
+    background-image: "img/fundo-off.png";
+}
